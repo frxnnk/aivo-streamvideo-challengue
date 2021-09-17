@@ -10,7 +10,8 @@
           <a class="nav-link active" aria-current="page" routerLink="public" >Public</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="private" >Private</a>
+          <a class="nav-link" routerLink="private" 
+          *ngIf="(auth.isAuthenticated$ | async)">Private</a>
         </li>
       </ul>
     </div>
