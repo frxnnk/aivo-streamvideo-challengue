@@ -1,28 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-brand-center navbar-dark bg-dark ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Aivo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="public" >Public</a>
-        </li>
+    <div >
+      <ul class="navbar-nav me-6 mb-6 mb-lg-6">
         <li class="nav-item">
           <a class="nav-link" routerLink="private" 
-          *ngIf="(auth.isAuthenticated$ | async)">Private</a>
+          *ngIf="(auth.isAuthenticated$ | async)">MOVIES</a>
         </li>
       </ul>
     </div>
+  
+    <button class="btn btn-danger"
+    (click)="logout()"
+    *ngIf="(auth.isAuthenticated$ | async)">Log Out</button>
   </div>
-  <button class="btn btn-primary"
-  (click)="loginWithRedirect()"
-  *ngIf="!(auth.isAuthenticated$ | async)">Entrar</button>
 
-  <button class="btn btn-danger"
-  (click)="logout()"
-  *ngIf="(auth.isAuthenticated$ | async)">Salir</button>
 </nav> 
 
 <div class="cointer mt-5">

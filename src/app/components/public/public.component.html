@@ -1,1 +1,15 @@
-<p>public works!</p>
+<div style="margin-top: 50%;">
+    <div class = "text-center text-white">
+        <h1 class="animate__animated animate__zoomInUp">Aivo Stream</h1>
+        <h3 class="animate__animated animate__zoomInDown">All the movies in one place</h3>  
+        <iframe class="animate__animated animate__zoomInDown" src="https://embed.lottiefiles.com/animation/68312"></iframe> 
+    </div>
+
+
+    <div class="col-md-12 text-center">
+        <button class="animate__animated animate__zoomInDown btn btn-primary"
+        (click)="loginWithRedirect()"
+        *ngIf="!(auth.isAuthenticated$ | async)">Join
+        </button>
+    </div>
+</div>

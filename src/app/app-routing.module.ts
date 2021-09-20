@@ -6,7 +6,7 @@ import { PublicComponent } from './components/public/public.component';
 import {AuthGuard} from '@auth0/auth0-angular'
 const routes: Routes = [
   {path:'public', component: PublicComponent},
-  {path: 'private', component: PrivateComponent, canActivate:[AuthGuard]},
+  {path:'private', component: PrivateComponent, canActivate:[AuthGuard]},
   {path: '', pathMatch: 'full', redirectTo:'public'},
 
 ];
