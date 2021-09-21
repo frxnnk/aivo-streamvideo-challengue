@@ -1,14 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-brand-center navbar-dark bg-dark ">
+<nav class="animate__animated animate__fadeInDown navbar navbar-expand-lg navbar-brand-center navbar-dark bg-dark ">
   <div class="container-fluid">
-    <div >
-      <ul class="navbar-nav me-6 mb-6 mb-lg-6">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="private" 
-          *ngIf="(auth.isAuthenticated$ | async)">MOVIES</a>
-        </li>
-      </ul>
-    </div>
-  
+    <a class="navbar-brand" href="#">Aivo Stream</a>
     <button class="btn btn-danger"
     (click)="logout()"
     *ngIf="(auth.isAuthenticated$ | async)">Log Out</button>
@@ -17,6 +9,7 @@
 </nav> 
 
 <div class="cointer mt-5">
-
+  
 </div>
 <router-outlet></router-outlet>
+

@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { Movie } from 'src/app/movie.model';
+import { PosterArt } from 'src/app/poster-art.model';
 import { ResponseFinal } from 'src/app/response-final.model';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -12,14 +13,23 @@ import { MoviesService } from 'src/app/services/movies.service';
 
 
 export class PrivateComponent implements OnInit {
-  // movies:ResponseFinal[]=[];
-  constructor(public auth: AuthService) { 
+  
+  movies:Movie[]=[];
+  totalMovies: number = 0;
+  images: PosterArt[] = [];
+
+  constructor(public auth: AuthService, private moviesService: MoviesService) { 
     
   }
   ngOnInit(): void {
-    // this.httpClient.get("https://assets-aivo.s3.amazonaws.com/movies.json").subscribe(data =>{
-    //   console.log(data);
-    // });
+
+    this.moviesService.getMovies().subscribe(data => {
+      this.movies = data.entries;
+      console.log(data.entries[0].images);
+      console.log(this.movies);
+
+    });
   }
+
 
 }

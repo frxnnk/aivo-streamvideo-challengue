@@ -10,9 +10,9 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  getMovies(): Observable<ResponseFinal[]>{
-    return this.http.get<ResponseFinal[]>('https://assets-aivo.s3.amazonaws.com/movies.json');
-  
+  getMovies(): Observable<ResponseFinal>{
+    return this.http.get<ResponseFinal>('https://assets-aivo.s3.amazonaws.com/movies.json');
   }
   
 }
+

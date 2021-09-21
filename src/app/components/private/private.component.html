@@ -1,4 +1,29 @@
-<pre *ngIf="auth.user$ | async as user" >
-    <code>{{user | json}}</code>
-</pre>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 mx-auto my-2">
+            <button type="button" class="btn btn-primary">Filtrar</button>
+        </div>
+   
+        <div class="col-md-2 mx-auto my-2">
+            <button type="button" class="btn btn-primary">Filtrar</button>
+        </div>
+    </div>
 
+    <div class="row">
+
+      <div class="col-md-4 mx-auto my-4" *ngFor="let card of movies">
+        <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">{{card.title}}</h5>
+              <p class="card-text">
+                <b>{{"Categoria: " + card.programType}}</b>
+                <br>
+                {{card.description}}
+                <br>
+                <b>{{"Año de lanzamiento: " + card.releaseYear}}</b>
+              </p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
