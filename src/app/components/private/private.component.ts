@@ -31,5 +31,8 @@ export class PrivateComponent implements OnInit {
     });
   }
 
+  logout(){
+    this.auth.logout();
+  }
 
 }

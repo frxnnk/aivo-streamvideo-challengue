@@ -1,12 +1,12 @@
 <div style="margin-top: 150px;">
     
     <div class = "text-center text-white" *ngIf="!(auth.isAuthenticated$ | async)">
-        <h1 class="animate__animated animate__bounceInUp">Aivo Stream</h1>
-        <h3 class="animate__animated animate__zoomInDown">All the movies in one place</h3>  
+        <h1 class="animate__animated animate__bounceInUp">AIVO</h1>
+        <h5 class="animate__animated animate__zoomInDown">All the movies in one place</h5>  
         <iframe class="animate__animated animate__zoomInDown" src="https://embed.lottiefiles.com/animation/72883"></iframe> 
     </div>
     <div class = "text-center text-white" *ngIf="(auth.isAuthenticated$ | async)">
-        <h1 class="animate__animated animate__bounceInUp">Aivo Stream</h1>
+        <h1 class="animate__animated animate__bounceInUp">AIVO</h1>
         <h3 class="animate__animated animate__bounceInUp">Watch your fauvorite movie</h3>  
         <iframe class="animate__animated animate__zoomInDown" src="https://embed.lottiefiles.com/animation/34590"></iframe> 
     </div>
@@ -14,10 +14,10 @@
     <div class="col-md-12 text-center">
         <button class="animate__animated animate__zoomInDown btn btn-outline-primary btn-lg"
         (click)="loginWithRedirect()"
-        *ngIf="!(auth.isAuthenticated$ | async)">Join
+        *ngIf="!(auth.isAuthenticated$ | async)">Join to Aivo
         </button>
-        <button class="animate__animated animate__zoomInDown btn btn-primary"
-        *ngIf="(auth.isAuthenticated$ | async)" [routerLink]="['/private']">Galery
+        <button class="animate__animated animate__zoomInDown btn btn-primary btn-lg"
+        *ngIf="(auth.isAuthenticated$ | async)" [routerLink]="['/private']">Go to Galery
         </button>
     </div>
 </div>
