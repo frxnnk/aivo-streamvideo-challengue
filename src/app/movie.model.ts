@@ -6,5 +6,5 @@ export class Movie {
     description: string = "";
     programType: string = "";
     images: PosterArt = {url:"1", width: "1", height: "1"};
-    releaseYear: string =  "";
+    releaseYear: number =  0;
 }
