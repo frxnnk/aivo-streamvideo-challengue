@@ -5,6 +5,3 @@ Al momento de bajar el repositorio a su computadora es necesario correr "npm -i"
 
 Luego ejecutar "ng serve" para levantar el servidor.
 
-Para ver el proyecto online:
-
-https://aivo-streamvideo-challengue-4zw5eevve-smeraldgreen.vercel.app/
