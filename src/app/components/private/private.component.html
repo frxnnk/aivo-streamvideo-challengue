@@ -114,19 +114,24 @@
 
     <div class="row">
 
-      <div class="col-md-4 mx-auto my-4 " *ngFor="let card of movies">
-        <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title">{{card.title}}</h5>
-              <p class="card-text">
-                <b>{{"Categoria: " + card.programType}}</b>
-                <br>
-                {{card.description}}
-                <br>
-                <b>{{"Año de lanzamiento: " + card.releaseYear}}</b>
-              </p>
-            </div>
-          </div>
+
+
+
+      <div class="card col-md-4 mx-auto my-4 " style="width: 18rem;"  *ngFor="let movie of movies">
+        <img [src]="movie.images['Poster Art'].url" class="card-img-top" alt="movie image">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.title}}</h5>
+          <p class="card-text">
+            <b>{{"Categoria: " + movie.programType}}</b>
+            <br>
+            {{movie.description}}
+            <br>
+            <b>{{"Año de lanzamiento: " + movie.releaseYear}}</b>
+          </p>
+        </div>
       </div>
+
     </div>
+
+
   </div>

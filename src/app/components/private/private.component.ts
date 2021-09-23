@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { Movie } from 'src/app/movie.model';
 import { PosterArt } from 'src/app/poster-art.model';
-import { ResponseFinal } from 'src/app/response-final.model';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -39,7 +38,14 @@ export class PrivateComponent implements OnInit {
       console.log("Response movie service: ", data);
       this.moviesClone = this.movies;
       this.extractYearsDisponible();
+      this.mapImages();
     });
+  }
+
+  mapImages(){
+    for (let x of this.movies) {
+      
+    }
   }
 
   logout(){
@@ -83,8 +89,7 @@ export class PrivateComponent implements OnInit {
 
  
   sort(state: number){
-      console.log("entre");
-      console.log(state);
+
       let moviesSortedByYear:Movie[] = this.moviesClone;
       let moviesSortedByName:Movie[] = this.moviesClone;
       let sortedMovies:Movie[]=[];
@@ -99,7 +104,7 @@ export class PrivateComponent implements OnInit {
         if(state ==2){
           sortedMovies = moviesSortedByName.sort((first, second) => 0 - (first.title > second.title ? 1 : -1));
         }
-          console.log("Sorted by:", this.sortBy , sortedMovies);
+        
         }
 
       if(this.sortBy == "year"){
@@ -110,7 +115,6 @@ export class PrivateComponent implements OnInit {
         if(state ==2){
           sortedMovies = moviesSortedByYear.sort((first, second) => 0 - (first.releaseYear > second.releaseYear ? 1 : -1));
         }
-        console.log("Sorted by:", this.sortBy , sortedMovies);
       }
 
       this.movies = sortedMovies;
@@ -154,7 +158,6 @@ export class PrivateComponent implements OnInit {
     let sortedArrayYears: number[] = this.years.sort((n1,n2) => n1 - n2); 
     sortedArrayYears = sortedArrayYears.filter((value, index, array) => 
     !array.filter((v, i) => JSON.stringify(value) == JSON.stringify(v) && i < index).length);
-    console.log(sortedArrayYears);
     this.years = sortedArrayYears;
   }
 }
